@@ -4,8 +4,8 @@ const secret_client = "x28DxmzBzqWXVQDPqN7AI54BhKFEwK5h"
 console.log() 
 const baseUrl = (endpoint) => {
   const baseUrl = "http://api.soundcloud.com";
-
-  return `${baseUrl}/${endpoint}`;
+  
+  return `${baseUrl}/${endpoint}client_id=${client_id}&secret_client=${secret_client}`;
 };
 
 const apiRequest = async (endpoint) => {
@@ -15,7 +15,7 @@ const apiRequest = async (endpoint) => {
     .catch((error) => console.log(error));
 };
 
-const getMusic = (query) => `tracks?&client_id=${client_id}&=${secret_client}q=${query}`;
+const getMusic = (query) => `tracks?q=${query}&`;
 
 const searchBtn = document.getElementById("searchBtn");
 const textArea = document.getElementById("textArea");
