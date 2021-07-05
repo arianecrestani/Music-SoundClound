@@ -1,26 +1,21 @@
-const bearerToken =
-  "4h5kQIL9mRXu-iAZrxNBKM1u4Xy31aR7JX6KszRA1U4w-hatuclfusP6q17cbGqJ";
+const client_id =
+  "DpnIFjonzFkfKvqKFbpo8vd3CYn2svLb";
+const secret_client = "x28DxmzBzqWXVQDPqN7AI54BhKFEwK5h"
 console.log() 
 const baseUrl = (endpoint) => {
-  const baseUrl = "http://api.genius.com/";
+  const baseUrl = "http://api.soundcloud.com";
 
   return `${baseUrl}/${endpoint}`;
 };
 
 const apiRequest = async (endpoint) => {
   return await fetch(baseUrl(endpoint), {
-    method: "GET",
-    json: true,
-    headers: {
-      "Content-Type": "application/json",
-      "authorization": `Bearer : ${bearerToken}`
-    },
   })
     .then((response) => response.json())
     .catch((error) => console.log(error));
 };
 
-const getMusic = (query) => `search?q=${query}`;
+const getMusic = (query) => `tracks?&client_id=${client_id}&=${secret_client}q=${query}`;
 
 const searchBtn = document.getElementById("searchBtn");
 const textArea = document.getElementById("textArea");
