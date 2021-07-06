@@ -15,13 +15,15 @@ const apiRequest = async (endpoint) => {
     .catch((error) => console.log(error));
 };
 
-const getMusic = (query) => `tracks?q=${query}&`;
+const getMusic = (query, all, hello) => `tracks?q=${query}&genres=${all}&search=${hello}&`;
+
 
 const searchBtn = document.getElementById("searchBtn");
 const textArea = document.getElementById("textArea");
 
 const btnEventHandler = () => {
   apiRequest(getMusic(textArea.value)).then((json) => updateUi(json));
+ 
 };
 
 searchBtn.addEventListener("click", btnEventHandler);
