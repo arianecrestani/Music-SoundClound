@@ -1,7 +1,12 @@
+@import { SC } from "https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
+
 const client_id =
   "DpnIFjonzFkfKvqKFbpo8vd3CYn2svLb";
 const secret_client = "x28DxmzBzqWXVQDPqN7AI54BhKFEwK5h"
-console.log() 
+SC.initialize({
+  client_id: client_id
+});
+
 const baseUrl = (endpoint) => {
   const baseUrl = "http://api.soundcloud.com";
   
@@ -15,27 +20,59 @@ const apiRequest = async (endpoint) => {
     .catch((error) => console.log(error));
 };
 
-const getMusic = (query, all, hello) => `tracks?q=${query}&genres=${all}&search=${hello}&`;
-
+const getMusic = (query) => `tracks/stream?&q=${query}&`;
+// const getStream = (query) => `tracks/stream?q=${query}`
 
 const searchBtn = document.getElementById("searchBtn");
 const textArea = document.getElementById("textArea");
 
+
 const btnEventHandler = () => {
   apiRequest(getMusic(textArea.value)).then((json) => updateUi(json));
- 
 };
 
 searchBtn.addEventListener("click", btnEventHandler);
 
-const updateUi = (json) => {
-  const music = document.getElementById("musics");
-  console.log(json)
 
-  // json.results.forEach((element) => {
-  //   const newElement = {
-     
-  //   };
+const createTitle = (title) => {
+  //criar div title e colocar valor innerhtml
+  //e retornar
+  const titleDiv = document.createElement("div");
+  titleDiv.id = "titleMusic";
+  titleDiv.innerHTML = title;
 
-  // });
+  return titleDiv;
 };
+
+
+
+const createMusic = (element) => {
+  const div = document.createElement("div");
+  div.id = "movieSection";
+
+  const title = createTitle(element.title);
+  div.appendChild(title);
+
+  return div;
+
+};
+
+// const updateUi = (json) => {
+//   const music = document.getElementById("musics");
+//   console.log(json)
+
+//   json.forEach((element) => {
+//     const newElement = {
+
+//       title: element.title,
+     
+//     };
+//     const musicDiv = createMusic(newElement);
+//     music.appendChild(musicDiv);
+//   });
+// };
+
+var track_url = 'https://soundcloud.com/forss/flickermood';
+SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
+  console.log('oEmbed response: ', oEmbed);
+});
