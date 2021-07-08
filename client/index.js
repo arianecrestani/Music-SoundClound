@@ -19,7 +19,7 @@ const apiRequest = async (endpoint) => {
     .catch((error) => console.log(error));
 };
 
-const getMusic = (query) => `tracks/stream?&q=${query}&`;
+const getMusic = (query) => `tracks/?&q=${query}&`;
 // const getStream = (query) => `tracks/stream?q=${query}`
 
 const searchBtn = document.getElementById("searchBtn");
@@ -33,47 +33,42 @@ const btnEventHandler = () => {
 searchBtn.addEventListener("click", btnEventHandler);
 
 
-const createTitle = (title) => {
-  //criar div title e colocar valor innerhtml
-  //e retornar
-  const titleDiv = document.createElement("div");
-  titleDiv.id = "titleMusic";
-  titleDiv.innerHTML = title;
+// const createTitle = (title) => {
+//   //criar div title e colocar valor innerhtml
+//   //e retornar
+//   const titleDiv = document.createElement("div");
+//   titleDiv.id = "titleMusic";
+//   titleDiv.innerHTML = title;
 
-  return titleDiv;
-};
-
-
-
-const createMusic = (element) => {
-  const div = document.createElement("div");
-  div.id = "movieSection";
-
-  const title = createTitle(element.title);
-  div.appendChild(title);
-
-  return div;
-
-};
-
-// const updateUi = (json) => {
-//   const music = document.getElementById("musics");
-//   console.log(json)
-
-//   json.forEach((element) => {
-//     const newElement = {
-
-//       title: element.title,
-     
-//     };
-//     const musicDiv = createMusic(newElement);
-//     music.appendChild(musicDiv);
-//   });
+//   return titleDiv;
 // };
 
-var track_url = 'https://soundcloud.com/forss/flickermood';
-SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
-  console.log('oEmbed response: ', oEmbed);
-  const player = document.getElementById("player");
-  player.innerHTML = oEmbed.html
-});
+
+
+// const createMusic = (element) => {
+//   const div = document.createElement("div");
+//   div.id = "movieSection";
+
+//   const title = createTitle(element.uri);
+//   div.appendChild(title);
+
+//   return div;
+
+// };
+
+const updateUi = (json) => {
+  const music = document.getElementById("musics");
+   console.log(json)
+ json.forEach(element => {
+
+   SC.oEmbed(element.uri,{ auto_play: true }).then(function(oEmbed) {
+     console.log('oEmbed response: ', oEmbed);
+     const player = document.getElementById("player");
+     player.innerHTML = oEmbed.html
+   });
+
+   
+  
+ });   
+};
+
