@@ -4,6 +4,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Connect with SoundCloud</title>
     <title>Music</title>
     <link rel="stylesheet" href="css/base.css" />
 </head>
@@ -17,11 +19,14 @@
     <input id="textArea" type="text" name="">
   </div>
   <div id="musics"></div>
-  <script> 
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/service-worker.js");
-    });
-  }
-  </script>
-</body>
+  <div id = 'player'></div>
+ 
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+<!-- <script>
+  SC.initialize({
+    client_id: ' "DpnIFjonzFkfKvqKFbpo8vd3CYn2svLb"',
+  });
+    </script> -->
+     <script src="index.js" type="text/javascript"></script>
+  </body>
+</html>

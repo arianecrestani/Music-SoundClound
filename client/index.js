@@ -1,5 +1,4 @@
-@import { SC } from "https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
-
+console.log("hello");
 const client_id =
   "DpnIFjonzFkfKvqKFbpo8vd3CYn2svLb";
 const secret_client = "x28DxmzBzqWXVQDPqN7AI54BhKFEwK5h"
@@ -75,4 +74,6 @@ const createMusic = (element) => {
 var track_url = 'https://soundcloud.com/forss/flickermood';
 SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
   console.log('oEmbed response: ', oEmbed);
+  const player = document.getElementById("player");
+  player.innerHTML = oEmbed.html
 });
