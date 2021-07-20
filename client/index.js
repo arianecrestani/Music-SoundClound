@@ -24,10 +24,10 @@ const textArea = document.getElementById("textArea");
 
 const enterPress = (e) => {
   if (e.key === "Enter") {
-  btnHadler();
+  btnHandler();
   }
 };
-const btnHadler = () => {
+const btnHandler = () => {
   apiRequest(getMusic(textArea.value)).then((json) => updateUi(json));
 };
 
