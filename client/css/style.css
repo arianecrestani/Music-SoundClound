@@ -44,7 +44,7 @@ background-blend-mode: screen;
 #player {
  
   display: flex;
-  ;
+
   flex-wrap: wrap;
   justify-content: center;
   

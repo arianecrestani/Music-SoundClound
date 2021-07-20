@@ -19,14 +19,20 @@ const apiRequest = async (endpoint) => {
 
 const getMusic = (query) => `tracks/?&q=${query}&`;
 
-const searchBtn = document.getElementById("searchBtn");
 const textArea = document.getElementById("textArea");
 
-const btnEventHandler = () => {
+
+const enterPress = (e) => {
+  if (e.key === "Enter") {
+  btnHadler();
+  }
+};
+const btnHadler = () => {
   apiRequest(getMusic(textArea.value)).then((json) => updateUi(json));
 };
 
-searchBtn.addEventListener("click", btnEventHandler);
+
+textArea.addEventListener("keypress", enterPress);
 
 const updateUi = (json) => {
   const player = document.getElementById("player");
