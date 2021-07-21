@@ -2,42 +2,46 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Tajawal', sans-serif;
-  background:
-  linear-gradient(red, transparent),
-  linear-gradient(to top left, lime, transparent),
-  linear-gradient(to top right, blue, transparent);
-background-blend-mode: screen;
+  font-family: "Tajawal", sans-serif;
+  background: linear-gradient(red, transparent),
+    linear-gradient(to top left, lime, transparent),
+    linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
 }
+#logo {
+  width: 20%;
+  display: flex;
+  align-self: center;
+  margin-top: 60px;
+  background-size: 100%;
+}
+
 .container {
-  margin: 4%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 3em;
 }
 h1 {
-  background-color:none;
-  font-size: 3rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: black;
-  align-self: center;
-  padding-bottom: 2rem;
+  color: rgb(104, 15, 62);
+  text-align: center;
+  padding: 0.5em;
 }
 
-#textArea { 
+#textArea {
   justify-content: center;
   height: 46px;
   width: 65%;
-  border:none;
+  border: none;
   border-radius: 30px;
   padding-left: 20px;
   outline: none;
   font-size: 1.3em;
+  color: chocolate;
 }
 
 #player {
- 
   display: flex;
   flex-direction: column;
-  
 }
