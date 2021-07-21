@@ -43,7 +43,7 @@ const updateUi = (json) => {
     SC.oEmbed(element.uri, { auto_play: true }).then(function (oEmbed) {
       console.log("oEmbed response: ", oEmbed);
       // insertAdjacentHTML()
-      player.innerHTML += oEmbed.html;
+      player.innerHTML += oEmbed.html; // add html code to a div
     });
   });
 };
