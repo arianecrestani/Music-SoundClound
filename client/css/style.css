@@ -9,7 +9,7 @@ body {
   background-blend-mode: screen;
 }
 #logo {
-  width: 20%;
+  width: 15rem;
   display: flex;
   align-self: center;
   margin-top: 60px;
