@@ -25,12 +25,13 @@ const textArea = document.getElementById("textArea");
 const enterPress = (e) => {
   if (e.key === "Enter") {
   btnHandler();
+  
   }
 };
 const btnHandler = () => {
   apiRequest(getMusic(textArea.value)).then((json) => updateUi(json));
+  imageMain()
 };
-
 
 textArea.addEventListener("keypress", enterPress);
 
@@ -47,3 +48,8 @@ const updateUi = (json) => {
     });
   });
 };
+const imageMain = () => {
+    const imgMain = document.getElementsByTagName('img')[0];
+    imgMain.src = `./microphone.jpg`;
+  }
+  

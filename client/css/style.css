@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -9,39 +15,33 @@ body {
   background-blend-mode: screen;
 }
 #logo {
-  width: 15rem;
-  display: flex;
-  align-self: center;
-  margin-top: 60px;
-  background-size: 100%;
+  width: 100%;
+  max-height: 1000px;
+  position: relative;
+  object-fit: cover;
 }
 
 .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 3em;
-}
-h1 {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: rgb(104, 15, 62);
-  text-align: center;
-  padding: 0.5em;
+  margin: 4em;
 }
 
 #textArea {
   justify-content: center;
-  height: 46px;
-  width: 65%;
+  height: 50px;
+  width: 40em;
   border: none;
   border-radius: 30px;
   padding-left: 20px;
   outline: none;
   font-size: 1.3em;
-  color: chocolate;
+  color: #d2691e;
 }
-
 #player {
   display: flex;
   flex-direction: column;
+  margin: 2em;
+  border-radius: 2em;
 }
