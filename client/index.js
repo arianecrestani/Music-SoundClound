@@ -49,10 +49,10 @@ const updateUi = (json) => {
 };
 const imageMain = () => {
     const imgMain = document.getElementsByTagName('img')[0];
-    imgMain.src = `./microphone.jpg`;
+    imgMain.src = `./grafit.jpg`;
     const body = document.getElementsByTagName("body")[0];
-    body.setAttribute("style","background:linear-gradient(90deg, rgba(130,128,157,1) 0%, rgba(22,26,42,1) 100%, rgba(66,89,77,0.8182379943502824) 100%);","color:black")
-    textArea.value =""
+    body.setAttribute("style","background:radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)rgb(238,174,202);")
+    textArea.value = "";
     
   }
 
