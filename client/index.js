@@ -53,6 +53,7 @@ const imageMain = () => {
     const body = document.getElementsByTagName("body")[0];
     body.setAttribute("style","background:linear-gradient(90deg, rgba(130,128,157,1) 0%, rgba(22,26,42,1) 100%, rgba(66,89,77,0.8182379943502824) 100%);","color:black")
     textArea.value =""
+    
   }
 
   
