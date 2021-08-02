@@ -37,7 +37,7 @@ body {
   padding-left: 20px;
   outline: none;
   font-size: 1.3em;
-  color: #d2691e;
+  color: gray;
 }
 #player {
   display: flex;
@@ -45,3 +45,4 @@ body {
   margin: 2em;
   border-radius: 2em;
 }
+
