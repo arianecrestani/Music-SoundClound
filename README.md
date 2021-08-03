@@ -13,4 +13,4 @@ Search for music
 
 ## Preview
 
-![flwochart](./preview.jpg)
+![flwochart](./Preview.jpg)
