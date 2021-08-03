@@ -6,3 +6,11 @@
 This project was created with the intention of practicing
 
 I used the Api - Sound-Cloud
+
+### Feature
+
+Search for music 
+
+## Preview
+
+![flwochart](./preview.jpg)
